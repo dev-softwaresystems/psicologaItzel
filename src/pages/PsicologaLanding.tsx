@@ -3,10 +3,21 @@ import { Link } from 'react-router-dom';
 import './PsicologaLanding.css';
 import perfilImg from '../assets/imgs/perfil.jpeg';
 import hablemosImg from '../assets/imgs/hablemos.jpg';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowUpRight, Menu, X, ArrowLeft } from 'lucide-react';
 
 const PsicologaLanding: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showServices, setShowServices] = useState(false);
+
+  const services = [
+    { name: 'Consulta en línea', price: '$600' },
+    { name: 'Terapia para adultos', price: '$599 - $600' },
+    { name: 'Consulta de primera vez', price: '$600' },
+    { name: 'Manejo de duelo', price: '$599 - $600' },
+    { name: 'Orientación vocacional', price: '$599 - $600' },
+    { name: 'Terapia cognitivo-conductual (TCC)', price: '$599' },
+    { name: 'Terapia breve', price: '$599 - $600' },
+  ];
 
   return (
     <div className="psicologa-container">
@@ -96,25 +107,53 @@ const PsicologaLanding: React.FC = () => {
 
         {/* Column 3 */}
         <div className="bento-col col-3">
-          <div className="card card-info">
-            <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="hablemos-info-header">
-                <h3>Conoceme</h3>
-                <ArrowUpRight size={24} />
-            </a>
-            <div className="hablemos-img-container">
-                <img src={hablemosImg} alt="Hablemos" />
-            </div>
-            <div className="divider" />
-            <div className="info-item">
-                <h4>Experiencia</h4>
-            </div>
-            <div className="divider" />
-            <div className="info-item">
-                <h4>Servicios y Precios</h4>
-            </div>
-            <div className="divider" />
-            <div className="info-item">
-                <h4>Opiniones</h4>
+          <div className="flip-scene">
+            <div className={`flipper ${showServices ? 'is-flipped' : ''}`}>
+              
+              {/* FRONT */}
+              <div className="card card-info card-front">
+                <h3 className='conoceme-info-header'>Conoceme</h3>
+                <div className="conoceme-img-container">
+                    <img src={hablemosImg} alt="Hablemos" />
+                </div>
+                <div className="divider" />
+                <Link to="/experiencia" className="info-item info-link">
+                    <h4>Experiencia</h4>
+                </Link>
+                <div className="divider" />
+                <a href="#" className="info-item info-link" onClick={(e) => { e.preventDefault(); setShowServices(true); }}>
+                    <h4>Servicios y Precios</h4>
+                </a>
+                <div className="divider" />
+                <a href="#" className="info-item info-link">
+                    <h4>Opiniones</h4>
+                </a>
+              </div>
+
+              {/* BACK */}
+              <div className="card card-info card-back" style={{ overflowY: 'auto' }}>
+                <div className="back-header">
+                  <button onClick={() => setShowServices(false)} className="back-btn">
+                    <ArrowLeft size={24} color="#000000" />
+                  </button>
+                  <h3 className="conoceme-info-header" style={{ marginBottom: 0 }}>Servicios y precios</h3>
+                </div>
+                
+                <div className="services-list">
+                  {services.map((svc, idx) => (
+                    <div className="service-item" key={idx}>
+                      <div className="service-details">
+                        <p className="service-title">{svc.name}</p>
+                        <p className="service-price">{svc.price} <a href="#" className="service-sublink">Detalles</a></p>
+                      </div>
+                      <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="agendar-btn">
+                        Agendar cita
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
           

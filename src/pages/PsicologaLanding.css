@@ -233,27 +233,20 @@
   display: flex;
   flex-direction: column;
 }
-.hablemos-info-header {
+.conoceme-info-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
   transition: opacity 0.2s;
 }
-.hablemos-info-header:hover {
-  opacity: 0.6;
-}
-.hablemos-info-header h3 {
-  font-size: 20px;
-  font-weight: 600;
-}
-.hablemos-img-container {
+.conoceme-img-container {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 24px;
 }
-.hablemos-img-container img {
+.conoceme-img-container img {
   width: 100%;
   height: auto;
   display: block;
@@ -279,6 +272,142 @@
 .info-item h4 {
   font-size: 20px;
   font-weight: 600;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.info-link {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.info-link:hover h4 {
+  opacity: 0.6;
+  transform: translateX(6px);
+}
+
+/* --- Flip Card Styles --- */
+.flip-scene {
+  perspective: 1200px;
+  flex: 1; 
+  display: flex;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.flip-scene .card {
+  animation: none;
+  opacity: 1;
+}
+
+.flipper {
+  flex: 1;
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  display: grid;
+}
+
+.flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Services Back-Card Overrides */
+.back-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.back-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: -8px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  border-radius: 50%;
+}
+.back-btn:hover {
+  background-color: rgba(0,0,0,0.05);
+  transform: scale(1.1);
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.service-item:last-child {
+  border-bottom: none;
+}
+
+.service-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.service-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+.service-price {
+  font-size: 14px;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.service-sublink {
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.service-sublink:hover {
+  opacity: 1;
+}
+
+.agendar-btn {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.agendar-btn:hover {
+  transform: scale(0.95);
+  opacity: 0.8;
 }
 
 .card-socials {
