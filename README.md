@@ -1,75 +1,50 @@
-# React + TypeScript + Vite
+# Reyna Quintana - Landing Page de Psicología
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción del Proyecto
+Esta es una Landing Page moderna, elegante y responsiva diseñada específicamente para la psicóloga Reyna Quintana. El objetivo principal de la aplicación es proporcionar una presencia digital empática y accesible que permita a los futuros pacientes conocer su experiencia, explorar sus servicios y agendar citas fácilmente de manera directa. 
 
-Currently, two official plugins are available:
+El sitio fue construido con un fuerte enfoque en la estética visual y el minimalismo cálido para reflejar un ambiente de sanación, paz mental y autodescubrimiento.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Características Principales
+- **Diseño tipo "Bento-Box"**: Una interfaz de usuario vanguardista basada en una cuadrícula CSS asimétrica que organiza la información vital (experiencia, presentación, llamadas a la acción) de manera atractiva e intuitiva.
+- **Pixel-Perfect UI**: La interfaz se implementó siguiendo estrictamente las referencias visuales de diseño. Incluye proporciones de aspecto específicas, altos radios de borde (border-radius) para suavizar la geometría y un espaciado consistente.
+- **100% Responsivo**: El sitio se adapta fluidamente desde pantallas de escritorio ultra anchas hasta dispositivos móviles pequeños. Incorpora de forma nativa un menú de navegación tipo hamburguesa de pantalla completa para mejorar la experiencia en celulares.
+- **Llamadas a la Acción (CTA) Optimizadas**: El diseño prioriza la conversión, incorporando tarjetas interactivas gigantes y botones de contacto que enlazan directamente a un chat de WhatsApp con un mensaje pre-cargado pidiendo una cita.
+- **Gráficos Ligeros Integrados**: Se diseñaron SVGs geométricos directamente en los componentes de React para agregar los elementos visuales sin depender de imágenes externas pesadas.
 
-## React Compiler
+## Tecnologías Utilizadas
+- **React 19**: Como biblioteca principal para la creación ágil de componentes modulares.
+- **Vite**: Para un flujo de desarrollo local extremadamente rápido y una construcción de producción altamente optimizada.
+- **TypeScript**: Para garantizar tipado fuerte y prevenir errores de escalabilidad en el código.
+- **Vanilla CSS**: Todo el sistema de diseño fue construido de cero mediante Vanilla CSS puro en lugar de frameworks como Tailwind o Bootstrap. Se usaron Variables CSS para la fácil mantenibilidad del tema.
+- **Lucide-react**: Para una iconografía pulida, consistente y altamente personalizable.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Identidad Visual y Paleta de Colores
+El tema transmite la esencia de la terapia mediante tonos monocromáticos sepia/pasteles:
+- **Background (Fondo General)**: `#F9F1F0`
+- **Primary (Tarjetas e Información)**: `#FADCD9`
+- **Secondary (Acción y Agendamiento)**: `#F8AFA6`
+- **Text (Contraste y Lectura)**: `#000000`
 
-Note: This will impact Vite dev & build performances.
+**Tipografía:** Todo el sitio utiliza la familia tipográfica **Afacad** importada de Google Fonts, ofreciendo un equilibrio excelente entre cercanía humana, legibilidad y presencia profesional.
 
-## Expanding the ESLint configuration
+## Instalación y Ejecución Local
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Para visualizar el proyecto o realizar desarrollo local, sigue las instrucciones a continuación:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Ingresa a la carpeta del proyecto:
+   ```bash
+   cd psicologaItzel
+   ```
+2. Instala todas las dependencias necesarias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo de Vite:
+   ```bash
+   npm run dev
+   ```
+4. Abre `http://localhost:5173/` en tu navegador web.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Landing page diseñada y construida para Reyna Quintana (No. Cédula: 14007125)*
