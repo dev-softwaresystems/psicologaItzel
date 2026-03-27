@@ -1,0 +1,127 @@
+import { useState } from 'react';
+import './PsicologaLanding.css';
+import perfilImg from '../assets/imgs/perfil.jpeg';
+import hablemosImg from '../assets/imgs/hablemos.jpg';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
+
+const PsicologaLanding: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  return (
+    <div className="psicologa-container">
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu-overlay">
+          <div className="mobile-menu-card">
+            <div className="mobile-menu-header">
+              <div className="brand mobile-brand">
+                <span className="light">REYNA QUINTANA</span> <strong>PSICÓLOGA</strong>
+              </div>
+              <button className="close-menu-btn" onClick={() => setIsMobileMenuOpen(false)}>
+                <X size={32} strokeWidth={3} color="#000000" />
+              </button>
+            </div>
+            <nav className="mobile-menu-nav">
+              <a href="#" onClick={() => setIsMobileMenuOpen(false)}>EXPERIENCIA</a>
+              <a href="#" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
+            </nav>
+          </div>
+        </div>
+      )}
+
+      {/* Header */}
+      <header className="header-card">
+        <div className="brand">
+          <span className="light">REYNA QUINTANA</span> <strong>PSICÓLOGA</strong>
+        </div>
+        <nav className="header-nav">
+          <a href="#">EXPERIENCIA</a>
+          <a href="#">CONTACTO</a>
+        </nav>
+        <button className="hamburger-btn" onClick={() => setIsMobileMenuOpen(true)}>
+          <Menu size={28} color="#000000" />
+        </button>
+      </header>
+
+      {/* Bento Grid */}
+      <main className="bento-grid">
+        {/* Column 1 */}
+        <div className="bento-col col-1">
+          <div className="card card-recupera">
+            <div className="flower-icon">
+                <svg viewBox="0 0 100 100" fill="none" stroke="#F8AFA6" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+                    {[0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165].map((angle, i) => (
+                        <ellipse key={i} cx="50" cy="50" rx="40" ry="12" transform={`rotate(${angle} 50 50)`} />
+                    ))}
+                </svg>
+            </div>
+            <h1>Recupera tu paz,<br/>mejora tu<br/>autoestima y vive<br/>con propósito.</h1>
+          </div>
+          
+          <div className="card card-hola">
+            <div className="dot-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="#F8AFA6" xmlns="http://www.w3.org/2000/svg">
+                    {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
+                        <rect key={i} x="14" y="4" width="4" height="4" transform={`rotate(${angle} 16 16)`} />
+                    ))}
+                    <rect x="14" y="14" width="4" height="4" />
+                </svg>
+            </div>
+            <p className="intro-text">
+              ¡Hola! Mi nombre es Reyna<br/>Quintana, soy Licenciada en<br/>Psicología por la Universidad<br/>Veracruzana, me encantaría<br/>caminar junto a ti en tu proceso<br/>de sanación y auto descubrimiento.
+            </p>
+            <span className="cedula">No. de cédula: 14007125</span>
+          </div>
+        </div>
+
+        {/* Column 2 */}
+        <div className="bento-col col-2">
+          <div className="card card-perfil">
+            <img src={perfilImg} alt="Reyna Quintana" />
+          </div>
+          
+          <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="card card-hablemos-action">
+            <div className="hablemos-top">
+              <span>Quisiera agendar<br/>una cita :)</span>
+              <ArrowUpRight size={28} />
+            </div>
+            <h2>HABLEMOS</h2>
+          </a>
+        </div>
+
+        {/* Column 3 */}
+        <div className="bento-col col-3">
+          <div className="card card-info">
+            <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="hablemos-info-header">
+                <h3>Hablemos</h3>
+                <ArrowUpRight size={24} />
+            </a>
+            <div className="hablemos-img-container">
+                <img src={hablemosImg} alt="Hablemos" />
+            </div>
+            <div className="divider" />
+            <div className="info-item">
+                <h4>Experiencia</h4>
+            </div>
+            <div className="divider" />
+            <div className="info-item">
+                <h4>Servicios y Precios</h4>
+            </div>
+            <div className="divider" />
+            <div className="info-item">
+                <h4>Opiniones</h4>
+            </div>
+          </div>
+          
+          <div className="card-socials">
+            <a href="https://www.instagram.com/_psireynaquintana/" target="_blank" rel="noreferrer">INSTAGRAM</a>
+            <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer">WHATSAPP</a>
+            <a href="#">LINKEDIN</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default PsicologaLanding;

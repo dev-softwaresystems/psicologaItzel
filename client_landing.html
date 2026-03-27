@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MarketFlow | Sun-baked Simplicity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#8c3c3c",
+                        "surface-container-high": "#ece6dc",
+                        "primary": "#c2652a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#3a302a",
+                        "on-secondary-fixed": "#2a2420",
+                        "outline-variant": "#d8d0c8",
+                        "secondary-fixed-dim": "#cec6be",
+                        "background": "#faf5ee",
+                        "inverse-primary": "#f0a878",
+                        "primary-fixed-dim": "#f0a878",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#fce4e0",
+                        "surface": "#faf5ee",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#3a2020",
+                        "surface-container-low": "#f6f0e8",
+                        "on-primary-container": "#fbe8d8",
+                        "inverse-on-surface": "#faf5ee",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#fbe8d8",
+                        "surface-tint": "#c2652a",
+                        "outline": "#9a9088",
+                        "surface-container": "#f2ece4",
+                        "on-tertiary-fixed-variant": "#6e3030",
+                        "on-background": "#3a302a",
+                        "tertiary-fixed-dim": "#e8a0a0",
+                        "tertiary-container": "#d47070",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#2e1515",
+                        "surface-container-highest": "#e6e0d6",
+                        "on-surface": "#3a302a",
+                        "tertiary-fixed": "#fce0e0",
+                        "on-error-container": "#7a1a10",
+                        "on-secondary-fixed-variant": "#504840",
+                        "error": "#c0392b",
+                        "surface-dim": "#dcd6cc",
+                        "surface-bright": "#faf5ee",
+                        "secondary": "#78706a",
+                        "primary-container": "#e08850",
+                        "on-secondary-container": "#605850",
+                        "surface-variant": "#ece6dc",
+                        "on-surface-variant": "#605850",
+                        "secondary-fixed": "#eae2da",
+                        "secondary-container": "#eae2da",
+                        "on-primary-fixed-variant": "#8a4518",
+                        "on-primary-fixed": "#401a08",
+                        "brand-blue": "#0A58CA"
+                    },
+                    fontFamily: {
+                        "headline": ["Eb Garamond"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #faf5ee; color: #3a302a; }
+        .font-serif { font-family: 'Eb Garamond', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar Component -->
+<nav class="bg-orange-50/80 backdrop-blur-md dark:bg-stone-950/80 docked full-width top-0 z-50 shadow-sm dark:shadow-none border-b border-stone-200/60 dark:border-stone-800/60 sticky top-0">
+<div class="flex justify-between items-center h-20 px-6 md:px-12 w-full max-w-screen-2xl mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-8">
+<span class="font-serif text-3xl font-black text-orange-900 dark:text-orange-100 tracking-tight">MarketFlow</span>
+<!-- Search Bar (on_left) -->
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-2 w-80 group transition-all focus-within:ring-1 focus-within:ring-primary">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-body placeholder:text-outline" placeholder="Explore the collection..." type="text"/>
+</div>
+</div>
+<!-- Trailing Icons Actions -->
+<div class="flex items-center gap-6">
+<button class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-all relative group">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-background">3</span>
+</button>
+<button class="text-stone-600 dark:text-stone-400 hover:text-orange-800 transition-all">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="md:hidden text-stone-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section: Promo Banner -->
+<section class="relative h-[819px] w-full flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Banner" class="w-full h-full object-cover" data-alt="Minimalist high-end retail interior with warm sunlight streaming through large windows hitting wooden textures and earthy ceramics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5-g8D4myTT6ZyMIChzKucmI71Y7DnHP_Lgf_bz9gPk8UV7czcqDs-YzTkmC9bAJewR_arwoXujH9z7EK0wlPS3GaDXzA02cGqcepZh1dzUwDDrN60lKoatsRgStP0jJxBMWM30ff5liGfimsKEOHbgT06LJdfvo9oExd1r0RGaMX9_EBOMA6wP_N-jD35G9RfjXA-4jpkCCp_qbhuBpkeQxDSQs-2FpaPQPyzv5nfFa7LCWSfU3whMRHtf8ZbIBUx2pnSy4llPzKs"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12 w-full">
+<div class="max-w-2xl">
+<span class="font-label uppercase tracking-widest text-primary font-semibold mb-4 block">Limited Collection</span>
+<h1 class="font-serif text-6xl md:text-8xl text-on-background leading-none mb-6">Sun-Baked <br/>Essence</h1>
+<p class="font-body text-lg text-secondary mb-10 max-w-md leading-relaxed">Curated artisanal pieces inspired by the desert's quiet warmth. Disciplined minimalism for the modern sanctuary.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label font-bold tracking-wide hover:bg-primary/90 transition-all shadow-lg shadow-primary/10">Shop the Drop</button>
+<button class="border border-outline px-10 py-4 rounded-lg font-label font-bold tracking-wide hover:bg-surface-container transition-all">Our Story</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Categories Grid (4 Categories) -->
+<section class="max-w-screen-2xl mx-auto px-6 md:px-12 py-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-serif text-4xl text-on-background">Curated Categories</h2>
+<p class="text-secondary font-body mt-2">Focused selections for a disciplined lifestyle.</p>
+</div>
+<a class="font-label text-primary font-bold hover:underline flex items-center gap-2" href="#">Explore All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Category 1 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+<img alt="Apothecary" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Amber glass apothecary bottles on a textured stone surface with a single dried botanical stem beside them" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPK4ceSYGI2iV8r1UPhZzsrBUoJA4ajEw4ij11iCfsT5c8QGi55LER5ixl1b7FhRBWyCnu7a1GXvlpCTc95U8I6TN7hmpZa2dwuP80uWQ4A0jw5vO_BLONDHYd4zFwq1Ohb4mSpqzRED0sHS67t7HmoAZ5Z6pb30WsBJvnAXRD1BG8A2VCiPUDrB2IA40WawFpcJlxkKNySpszENOfKgjKS7oKMkbShSNXRB0IlEffcPrZrBUqt_6l374WKd7uTg0wSvGZ4L3k506p"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/60 to-transparent">
+<h3 class="font-serif text-2xl text-white">Apothecary</h3>
+<p class="text-white/80 text-sm font-label mt-1">Scented Rituals</p>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+<img alt="Home Decor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Handcrafted minimalist ceramic vase with organic shape sitting on a wooden plinth against a beige wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfPo8-S8sghJuyBtF0nkyn5udYcxZ5zCbWTwi1IvRUtlFWLnYZat-yG2W2GWi2bct9KPqu9XVNZSjavdZIieVkqADkq5Kig-aLd10rUoa3wP2HVTDafOxUWUJw0pU4qLchInaVCmUskPOT7pj9zf-49cGmEDcV6rpXOqOf-JKyuGGv-m99pus3YKDPwZJKTA5K0EBst9TzXFFy9GM5WQGe0qjVpaZzBgjngK3U1MXOsqhSCFMwrcQkeZbwbc8pMOuXn-yA3QLEeKAF"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/60 to-transparent">
+<h3 class="font-serif text-2xl text-white">Object d'Art</h3>
+<p class="text-white/80 text-sm font-label mt-1">Curated Vessels</p>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+<img alt="Apparel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Folded linen shirts in earthy tones of sand, terracotta, and olive stacked neatly on a rustic shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGRecyrep_XWV8mPVBqpzqVDgJQOg9Zt9rwr3UYdm279YiWydO0gspYSMjzgS4vSbT1dVFOb1np__sb5N85OeVY6WPNABHO6n9aCm9AnomLwpZq-C2HUv3GHjqi2RcQ7_N8kw2YqoqkQk-w4210YUdUvDg7IcKtxa5T7rnm8ip-hr_9wNlg4PVjroitALX6LNJj5cLBf-RsSehmmRPwsXjnthBYjA24ImhusAWJcbERqzaUzgUaChKYoUAIUhviM2YMix6MEn7B_8q"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/60 to-transparent">
+<h3 class="font-serif text-2xl text-white">Textiles</h3>
+<p class="text-white/80 text-sm font-label mt-1">Raw Fibers</p>
+</div>
+</div>
+<!-- Category 4 -->
+<div class="group relative aspect-[3/4] overflow-hidden rounded-xl cursor-pointer">
+<img alt="Dining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Set of stone-finished minimalist dinnerware plates and bowls stacked artistically on a linen tablecloth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc0y6pBvHh7FTX1ojYbKO0_P_rlfRyoomk_ZgZk_yKSOdQ4lYm5Eo6cGMqq157kSOY3CuXmyNnaOe8N4RVng5hmrqfPpXHJzIrDvHKOm2Snro9bENjJ3z1KoOY6_apDRshyoTQjnPeGDtjCePOfmYTiPRSGRUBVPHqJOtagA0iJe_NP1XHlJ8Wu-GgzDFQK_YFRiQ_4VwI4rCWRJI2juyyQagFnmpMArkNjQUUJT-xAshpD0SJbLGB39H07dPxIeLWL42ZpkUXqWcM"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/60 to-transparent">
+<h3 class="font-serif text-2xl text-white">Epicure</h3>
+<p class="text-white/80 text-sm font-label mt-1">Dining Essentials</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Products Grid (4-column) -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+<div class="text-center mb-16">
+<h2 class="font-serif text-5xl text-on-background mb-4">Trending Now</h2>
+<div class="w-24 h-px bg-primary mx-auto mb-6"></div>
+<p class="text-secondary font-body max-w-xl mx-auto">The pieces our community is currently cherishing. Timeless, effortless, and intentionally crafted.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+<!-- Product Card 1 -->
+<div class="group flex flex-col">
+<div class="relative bg-surface rounded-xl overflow-hidden mb-6 aspect-square">
+<img alt="Sienna Vessel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of a rustic terracotta bowl with visible brush strokes and organic edges on a soft beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClNYZl2UMUHg5BZgjVVB3_1BRJIAg5Yoy3BBlotkdSE0I2h8C4Qpb6Boh354Q3HZT77p6NRtanfSBDidCjj0NV4dNJ6A3RmxtyqzXDCrNZ32gc1r5ssnNT4zYgncaViT_h_bq8ESBGauzt2-36LaKLiUpEX7ijSfMoBMzx2hjpbLv2u2E3MxjnA1lrif8EXbaY67T_YqaAhzvAiAN0y0TeYnju2uZDm6Mk0OqfAs0ZiHfZYMNgKxLE-fc8UG8hTonKW17dwbJRBQ9Z"/>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-stone-400 hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-serif text-xl text-on-background">Sienna Clay Bowl</h4>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-xs text-secondary ml-1 font-body">(124)</span>
+</div>
+</div>
+<span class="font-body font-bold text-lg">$48.00</span>
+</div>
+<button class="mt-4 bg-brand-blue text-white w-full py-3 rounded-lg font-label font-bold text-sm tracking-wide opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col">
+<div class="relative bg-surface rounded-xl overflow-hidden mb-6 aspect-square">
+<img alt="Linen Throw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Soft sand-colored linen blanket draped over a minimalist wooden chair in a sun-drenched room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkIw33PagoD5PKsERfjRCmIXG7a-_kRlMiBZTvFFPZ2-4O1tM1ncJEKIfPMhlJXfplZDln1r2599rn01A2tG490xe63hC1_t7vNtsTZAzYXf0xGix12A6Az-0YxY_st0D3SoD4WZ7H-TQkTNfxnFJGUTDAGrBMNEYezY53jl-_wXKCEplsvTiSBaeHYVYLiKlFF68PZBc_QLDnlubnh77HJLCDw7a8wUeqqdZpRFu-iD62wB7Yl_4xsp2EQDo6yYGK1NDHDvsn_M8g"/>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-stone-400 hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-serif text-xl text-on-background">Frayed Linen Throw</h4>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs text-secondary ml-1 font-body">(86)</span>
+</div>
+</div>
+<span class="font-body font-bold text-lg">$120.00</span>
+</div>
+<button class="mt-4 bg-brand-blue text-white w-full py-3 rounded-lg font-label font-bold text-sm tracking-wide opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col">
+<div class="relative bg-surface rounded-xl overflow-hidden mb-6 aspect-square">
+<img alt="Cedar Candle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal candle in a dark concrete vessel with a crackling wood wick on a stack of art books" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6RMLfVBAfVsyxzxTC0aO7T0c7Yl4FQuUAkPJaeBQktKIJXHMFYnVwdblmShODXr8a6yzOozwHuyDa_8-tWWMyZIxZwAohwMgDzNlDzg0__vmvTCqOBnKuSktdqHiNYhGwBSatOcnRNty4u7lv1PG_n_-h4JmB-z8rwr_1wld8mpWq7QPSDsPGaxgvwN-aQSkJvdzYGZ5R68RuK6SSD21V9ahCHxC3n3yvYBmMjH-PPQP3U0-72fGFRETK7hSRGHqRYMTztPDPu_th"/>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-stone-400 hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-serif text-xl text-on-background">Burnt Cedar Candle</h4>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="text-xs text-secondary ml-1 font-body">(210)</span>
+</div>
+</div>
+<span class="font-body font-bold text-lg">$36.00</span>
+</div>
+<button class="mt-4 bg-brand-blue text-white w-full py-3 rounded-lg font-label font-bold text-sm tracking-wide opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col">
+<div class="relative bg-surface rounded-xl overflow-hidden mb-6 aspect-square">
+<img alt="Wooden Stool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hand-carved dark oak wood stool with tripod legs in a minimalist room with warm spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGmNF2_ipz1Dm87G2VUsZY1lfDGGyT6y_A2mDJImTUAW9RnCfUpXESePX7NsDMvwGEiMbsSc2zSng9bQz26j3Nk5G922pJOPrmrrWJImxC8c1WFFGAH4ZXHEWJj7fi11WJmmqGxmNwv4rzG-1e7EV_Ff7VU8cQfbFx-xnNInvHm_F18GD69mlX3xg0Ky2hD7qr_Z9Owg3qbSgUmlqY8DLtKHZbyXBQgt2xSIIe_TzY-RPg41KEXz0Jd8kllMSutXnEEzU3LRvVa26c"/>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-stone-400 hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-serif text-xl text-on-background">Oak Tripod Stool</h4>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs text-secondary ml-1 font-body">(42)</span>
+</div>
+</div>
+<span class="font-body font-bold text-lg">$285.00</span>
+</div>
+<button class="mt-4 bg-brand-blue text-white w-full py-3 rounded-lg font-label font-bold text-sm tracking-wide opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Aesthetic Interstitial -->
+<section class="max-w-screen-2xl mx-auto px-6 md:px-12 py-32 flex flex-col md:flex-row items-center gap-20">
+<div class="w-full md:w-1/2">
+<img alt="Lifestyle" class="rounded-3xl shadow-2xl" data-alt="Wide shot of a modern minimalist living room with beige linen sofa, wooden coffee table, and soft afternoon light creating shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN1bw25xnqx2pYWkGcwc2B_0llCFAJDdDQ5OuRBxvB4clhIhN9jT9T_TE4p9GKnvVX0zaiqVcsSnGJZ-9svWZB3JcTijqJNbE8qWt1HUtoj5FhWq-xax9LetTWRdetEBDstXibzd95LAgKxBKlFzUn_dEdfScg4Bp5hbtPJOmwtoIN38cj_SivAVbvteZ45WHAaE5udrQfaR2uhVp9Ya4ycQLdnm_ZuynPx-d1mtMy4n3VPq2RRxO3Sr6R_e22a5v9BqtCaOuKQiGC"/>
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<span class="font-label uppercase tracking-widest text-tertiary font-bold">The Philosophy</span>
+<h2 class="font-serif text-6xl text-on-background">Less, But Better.</h2>
+<p class="text-secondary font-body text-xl leading-relaxed">We believe in the power of a few perfect things. Our objects are selected for their ability to age gracefully, tell a story, and bring a sense of calm to your daily rituals.</p>
+<div class="pt-4">
+<button class="border-b-2 border-primary pb-1 font-label font-extrabold text-primary hover:text-tertiary hover:border-tertiary transition-all uppercase tracking-tighter">Read the Journal</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-stone-100 dark:bg-stone-900 full-width py-12 border-t border-stone-200 dark:border-stone-800">
+<div class="flex flex-col items-center gap-8 w-full text-center px-4 max-w-screen-2xl mx-auto">
+<span class="font-serif text-xl text-stone-900 dark:text-stone-100">MarketFlow</span>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-sans text-sm tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:underline transition-colors" href="#">Shop All</a>
+<a class="font-sans text-sm tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:underline transition-colors" href="#">About Us</a>
+<a class="font-sans text-sm tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:underline transition-colors" href="#">Sustainability</a>
+<a class="font-sans text-sm tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:underline transition-colors" href="#">Shipping</a>
+<a class="font-sans text-sm tracking-wide uppercase text-stone-500 dark:text-stone-400 hover:underline transition-colors" href="#">Returns</a>
+</div>
+<div class="flex gap-6 text-stone-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">brand_awareness</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">mail</span>
+</div>
+<div class="w-full border-t border-stone-200 dark:border-stone-800 pt-8 mt-4">
+<p class="font-sans text-xs tracking-widest uppercase text-stone-400">© 2024 MarketFlow. Sun-baked simplicity.</p>
+</div>
+</div>
+</footer>
+</body></html>
