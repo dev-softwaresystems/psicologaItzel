@@ -1,13 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './PsicologaLanding.css';
 import perfilImg from '../assets/imgs/perfil.jpeg';
 import hablemosImg from '../assets/imgs/hablemos.jpg';
-import { ArrowUpRight, Menu, X, ArrowLeft } from 'lucide-react';
+import { ArrowUpRight, Menu, X, ArrowLeft, Moon, Sun } from 'lucide-react';
 
 const PsicologaLanding: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showServices, setShowServices] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    setIsDarkMode(document.body.classList.contains('dark'));
+  }, []);
+
+  const toggleTheme = () => {
+    const isDark = document.body.classList.toggle('dark');
+    setIsDarkMode(isDark);
+  };
 
   const services = [
     { name: 'Consulta en línea', price: '$600' },
@@ -38,6 +48,9 @@ const PsicologaLanding: React.FC = () => {
             <nav className="mobile-menu-nav">
               <Link to="/experiencia" onClick={() => setIsMobileMenuOpen(false)}>EXPERIENCIA</Link>
               <a href="#" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
+              <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema" style={{ marginTop: '24px' }}>
+                {isDarkMode ? <Sun size={32} /> : <Moon size={32} />}
+              </button>
             </nav>
           </div>
         </div>
@@ -53,6 +66,9 @@ const PsicologaLanding: React.FC = () => {
         <nav className="header-nav">
           <Link to="/experiencia">EXPERIENCIA</Link>
           <a href="#">CONTACTO</a>
+          <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema">
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </nav>
         <button className="hamburger-btn" onClick={() => setIsMobileMenuOpen(true)}>
           <Menu size={28} color="#000000" />

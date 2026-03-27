@@ -9,6 +9,19 @@
   --gap: 24px;
 }
 
+body.dark {
+  --color-bg: #141212;
+  --color-primary: #211D1D;
+  --color-secondary: #D69890;
+  --color-text: #FFFFFF;
+}
+
+body.dark .card-hablemos-action,
+body.dark .agendar-btn,
+body.dark .pill-tag {
+  color: #141212 !important;
+}
+
 * {
   box-sizing: border-box;
 }
