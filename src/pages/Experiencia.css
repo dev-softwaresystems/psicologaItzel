@@ -1,0 +1,161 @@
+.experiencia-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--gap);
+  opacity: 0;
+  animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 1024px) {
+  .experiencia-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.exp-main-card {
+  padding: 48px;
+  justify-content: flex-start;
+  animation-delay: 0.1s;
+}
+
+.exp-title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+.exp-text {
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+.exp-text.mt-4 {
+  margin-top: 16px;
+}
+
+.exp-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.exp-small-card {
+  padding: 32px;
+}
+
+.exp-sidebar .card:nth-child(1) { animation-delay: 0.2s; }
+.exp-sidebar .card:nth-child(2) { animation-delay: 0.3s; }
+.exp-sidebar .card:nth-child(3) { animation-delay: 0.4s; }
+
+.exp-small-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.mt-6 {
+  margin-top: 32px;
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.exp-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill-tag {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: default;
+}
+.pill-tag:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+.exp-bullet-list {
+  padding-left: 20px;
+  margin: 0;
+}
+.exp-bullet-list li {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.highlight-card {
+  background-color: var(--color-secondary);
+}
+
+.exp-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.exp-info-row > svg {
+  margin-top: 2px;
+}
+
+.exp-info-row h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.exp-info-row p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.exp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.exp-link .underline {
+  text-decoration: underline;
+}
+
+.exp-link:hover {
+  opacity: 0.6;
+}
+
+.divider-subtle {
+  height: 1px;
+  background-color: rgba(0,0,0,0.08);
+  width: 100%;
+  margin: 24px 0;
+}

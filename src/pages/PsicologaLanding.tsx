@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './PsicologaLanding.css';
 import perfilImg from '../assets/imgs/perfil.jpeg';
 import hablemosImg from '../assets/imgs/hablemos.jpg';
@@ -15,14 +16,16 @@ const PsicologaLanding: React.FC = () => {
           <div className="mobile-menu-card">
             <div className="mobile-menu-header">
               <div className="brand mobile-brand">
-                <span className="light">REYNA QUINTANA</span> <strong>PSICÓLOGA</strong>
+                <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  <span className="light">REYNA QUINTANA</span> <strong>PSICÓLOGA</strong>
+                </Link>
               </div>
               <button className="close-menu-btn" onClick={() => setIsMobileMenuOpen(false)}>
                 <X size={32} strokeWidth={3} color="#000000" />
               </button>
             </div>
             <nav className="mobile-menu-nav">
-              <a href="#" onClick={() => setIsMobileMenuOpen(false)}>EXPERIENCIA</a>
+              <Link to="/experiencia" onClick={() => setIsMobileMenuOpen(false)}>EXPERIENCIA</Link>
               <a href="#" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
             </nav>
           </div>
@@ -32,10 +35,12 @@ const PsicologaLanding: React.FC = () => {
       {/* Header */}
       <header className="header-card">
         <div className="brand">
-          <span className="light">REYNA QUINTANA</span> <strong>PSICÓLOGA</strong>
+          <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
+            <span className="light">REYNA QUINTANA</span> <strong>PSICÓLOGA</strong>
+          </Link>
         </div>
         <nav className="header-nav">
-          <a href="#">EXPERIENCIA</a>
+          <Link to="/experiencia">EXPERIENCIA</Link>
           <a href="#">CONTACTO</a>
         </nav>
         <button className="hamburger-btn" onClick={() => setIsMobileMenuOpen(true)}>
@@ -93,7 +98,7 @@ const PsicologaLanding: React.FC = () => {
         <div className="bento-col col-3">
           <div className="card card-info">
             <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="hablemos-info-header">
-                <h3>Hablemos</h3>
+                <h3>Conoceme</h3>
                 <ArrowUpRight size={24} />
             </a>
             <div className="hablemos-img-container">
