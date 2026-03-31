@@ -12,11 +12,29 @@ const PsicologaLanding: React.FC = () => {
 
   useEffect(() => {
     setIsDarkMode(document.body.classList.contains('dark'));
+    
+    // Listener for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem('theme')) {
+        const isDark = e.matches;
+        if (isDark) {
+          document.body.classList.add('dark');
+        } else {
+          document.body.classList.remove('dark');
+        }
+        setIsDarkMode(isDark);
+      }
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleTheme = () => {
     const isDark = document.body.classList.toggle('dark');
     setIsDarkMode(isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   };
 
   const services = [

@@ -9,11 +9,28 @@ const Experiencia = () => {
 
   useEffect(() => {
     setIsDarkMode(document.body.classList.contains('dark'));
+    
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem('theme')) {
+        const isDark = e.matches;
+        if (isDark) {
+          document.body.classList.add('dark');
+        } else {
+          document.body.classList.remove('dark');
+        }
+        setIsDarkMode(isDark);
+      }
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleTheme = () => {
     const isDark = document.body.classList.toggle('dark');
     setIsDarkMode(isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   };
 
   return (
@@ -68,7 +85,7 @@ const Experiencia = () => {
         <div className="card exp-main-card">
           <h1 className="exp-title">Mi Experiencia y Enfoque</h1>
           <p className="exp-text">
-            Soy Reyna Quintana, Licenciada en Psicología por la Universidad Veracruzana, y me encantaría caminar junto a ti en tu proceso de sanación y autodescubrimiento a través de un espacio diseñado exclusivamente para mujeres de todas las edades. Mi enfoque se distingue por una calidad humana y empatía profunda, ofreciendo un acompañamiento especializado que integra herramientas y métodos actualizados para obtener resultados tangibles, abordando desde los aspectos históricos que originan tus dificultades hasta los desafíos actuales que enfrentas en cada etapa de tu vida.
+            Soy Reyna Quintana, Licenciada en Psicología por la Universidad Veracruzana, y me encantaría caminar junto a ti en tu proceso de sanación y autodescubrimiento a través de un espacio diseñado para mujeres de todas las edades, niños y adolescentes. Mi enfoque se distingue por una calidad humana y empatía profunda, ofreciendo un acompañamiento especializado que integra herramientas y métodos actualizados para obtener resultados tangibles, abordando desde los aspectos históricos que originan tus dificultades hasta los desafíos actuales que enfrentas en cada etapa de tu vida.
           </p>
           <p className="exp-text mt-4">
             Cuento con una sólida preparación en casos reales y una formación integral que abarca la psicología laboral y educativa, aunque mi verdadera pasión y especialidad residen en la psicología clínica dedicada al bienestar femenino. Mi compromiso es brindarte un tratamiento profesional donde te sientas segura y comprendida, utilizando mi experiencia académica y clínica para guiarte hacia una vida más plena y consciente, siempre bajo una perspectiva joven y renovada que se adapta a las necesidades únicas de las mujeres hoy en día.
@@ -81,8 +98,8 @@ const Experiencia = () => {
           <div className="card exp-small-card">
             <h3>Enfoque terapéutico</h3>
             <ul className="exp-list">
-              <li><CheckCircle2 color="var(--color-bg)" fill="var(--color-secondary)" size={24} /> Psicoterapia cognitivo conductual</li>
-              <li><CheckCircle2 color="var(--color-bg)" fill="var(--color-secondary)" size={24} /> Terapia breve centrada en soluciones</li>
+              <li><CheckCircle2 color="var(--color-bg)" fill="var(--color-secondary)" size={24} /> Terapia de aceptación y compromiso</li>
+              {/*<li><CheckCircle2 color="var(--color-bg)" fill="var(--color-secondary)" size={24} /> Terapia breve centrada en soluciones</li>*/}
             </ul>
           </div>
 
@@ -108,6 +125,8 @@ const Experiencia = () => {
               <div>
                 <h4>Pacientes que atiendo</h4>
                 <p>Mujeres de todas las edades</p>
+                <p>Niños</p>
+                <p>Adolescentes</p>
               </div>
             </div>
             <div className="divider-subtle" />
