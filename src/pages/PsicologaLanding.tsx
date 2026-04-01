@@ -38,13 +38,15 @@ const PsicologaLanding: React.FC = () => {
   };
 
   const services = [
-    { name: 'Consulta en línea', price: '$600' },
-    { name: 'Terapia para adultos', price: '$599 - $600' },
-    { name: 'Consulta de primera vez', price: '$600' },
-    { name: 'Manejo de duelo', price: '$599 - $600' },
-    { name: 'Orientación vocacional', price: '$599 - $600' },
-    { name: 'Terapia cognitivo-conductual (TCC)', price: '$599' },
-    { name: 'Terapia breve', price: '$599 - $600' },
+    { name: 'Consulta en línea'},
+    { name: 'Terapia para adultos'},
+    { name: 'Consulta de primera vez'},
+    { name: 'Manejo de duelo'},
+    { name: 'Orientación vocacional'},
+    { name: 'Evaluación psicológica'},
+    { name: 'Terapia de pareja '},
+    { name: 'Talleres y charlas'},
+    { name: 'NOM - 035'},
   ];
 
   return (
@@ -178,7 +180,6 @@ const PsicologaLanding: React.FC = () => {
                     <div className="service-item" key={idx}>
                       <div className="service-details">
                         <p className="service-title">{svc.name}</p>
-                        <p className="service-price">{svc.price} <a href="#" className="service-sublink">Detalles</a></p>
                       </div>
                       <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="agendar-btn">
                         Agendar cita

@@ -82,14 +82,38 @@ const Experiencia = () => {
       {/* Main Experiencia Content */}
       <main className="experiencia-grid">
         {/* Left Column: Intro */}
-        <div className="card exp-main-card">
-          <h1 className="exp-title">Mi Experiencia y Enfoque</h1>
-          <p className="exp-text">
-            Soy Reyna Quintana, Licenciada en Psicología por la Universidad Veracruzana, y me encantaría caminar junto a ti en tu proceso de sanación y autodescubrimiento a través de un espacio diseñado para mujeres de todas las edades, niños y adolescentes. Mi enfoque se distingue por una calidad humana y empatía profunda, ofreciendo un acompañamiento especializado que integra herramientas y métodos actualizados para obtener resultados tangibles, abordando desde los aspectos históricos que originan tus dificultades hasta los desafíos actuales que enfrentas en cada etapa de tu vida.
-          </p>
-          <p className="exp-text mt-4">
-            Cuento con una sólida preparación en casos reales y una formación integral que abarca la psicología laboral y educativa, aunque mi verdadera pasión y especialidad residen en la psicología clínica dedicada al bienestar femenino. Mi compromiso es brindarte un tratamiento profesional donde te sientas segura y comprendida, utilizando mi experiencia académica y clínica para guiarte hacia una vida más plena y consciente, siempre bajo una perspectiva joven y renovada que se adapta a las necesidades únicas de las mujeres hoy en día.
-          </p>
+        <div className="exp-main-col">
+          {/* Card 1: Mi Enfoque */}
+          <div className="card exp-main-card" style={{ animationDelay: '0.1s' }}>
+            <h1 className="exp-title">Mi Enfoque</h1>
+            <h2 className="exp-subtitle" style={{ fontSize: '22px', fontWeight: '600', marginBottom: '12px' }}>Terapia de aceptación y compromiso</h2>
+            <p className="exp-text" style={{ marginBottom: 0 }}>
+              Su propósito es trabajar a través del autoconocimiento y actuar conforme a nuestros valores para así lograr una vida significativa y placentera.
+            </p>
+          </div>
+
+          {/* Card 2: Mi Experiencia */}
+          <div className="card exp-main-card" style={{ animationDelay: '0.2s' }}>
+            <h1 className="exp-title" style={{ marginBottom: '16px' }}>Mi Experiencia</h1>
+            <p className="exp-text">
+              Tengo 3 años acompañando a mujeres de distintas edades en la consulta privada, ademas de contar con experiencia atendiendo a niños y adolescentes a traves de talleres grupales y sesiones individuales.
+            </p>
+
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                "2022 | Curso Recursos Humanos.",
+                "2023 | Curso NOM - 035",
+                "2023 | Curso - taller terapia de juego",
+                "2025 | Diplomado neuropsicología",
+                "2025 | Diplomado Terapia cognitivo - conductual",
+                "2025 | Diplomado psicologia clinica"
+              ].map((curso, index) => (
+                <li key={index}>
+                  <p className="exp-text" style={{ marginBottom: 0 }}>{curso}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Right Column: Key Details */}
@@ -109,13 +133,13 @@ const Experiencia = () => {
             <div className="tags-container">
               <span className="pill-tag">Ansiedad</span>
               <span className="pill-tag">Depresión</span>
-              <span className="pill-tag">Dependencia emocional</span>
-            </div>
-            
-            <h3 className="mt-6">Enfocado en:</h3>
-            <ul className="exp-bullet-list">
-              <li>Trastornos de ansiedad</li>
-            </ul>
+              <span className="pill-tag">Autoestima</span>
+              <span className="pill-tag">Duelo</span>
+              <span className="pill-tag">Identidad</span>
+              <span className="pill-tag">Maternidad</span>
+              <span className="pill-tag">Bienestar emocional</span>
+              <span className="pill-tag">Amor propio</span>
+             </div>
           </div>
 
           {/* Consultation Types */}
