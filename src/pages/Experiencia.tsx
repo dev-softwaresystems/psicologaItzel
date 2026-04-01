@@ -158,7 +158,7 @@ const Experiencia = () => {
               <Video size={24} />
               <div>
                 <h4>Tipos de consulta</h4>
-                <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="exp-link">
+                <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer" className="exp-link">
                   Videoconsulta <span className="underline">Crea tu cita</span> <ArrowUpRight size={16} />
                 </a>
               </div>

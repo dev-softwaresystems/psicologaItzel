@@ -132,7 +132,7 @@ const PsicologaLanding: React.FC = () => {
             <img src={perfilImg} alt="Reyna Quintana" />
           </div>
           
-          <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="card card-hablemos-action">
+          <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer" className="card card-hablemos-action">
             <div className="hablemos-top">
               <span>Quisiera agendar<br/>una cita :)</span>
               <ArrowUpRight size={28} />
@@ -181,7 +181,7 @@ const PsicologaLanding: React.FC = () => {
                       <div className="service-details">
                         <p className="service-title">{svc.name}</p>
                       </div>
-                      <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer" className="agendar-btn">
+                      <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer" className="agendar-btn">
                         Agendar cita
                       </a>
                     </div>
@@ -194,7 +194,7 @@ const PsicologaLanding: React.FC = () => {
           
           <div className="card-socials">
             <a href="https://www.instagram.com/_psireynaquintana/" target="_blank" rel="noreferrer">INSTAGRAM</a>
-            <a href="https://api.whatsapp.com/message/7WDSYHZ3HKOZB1?autoload=1&app_absent=0" target="_blank" rel="noreferrer">WHATSAPP</a>
+            <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer">WHATSAPP</a>
             <a href="#">LINKEDIN</a>
           </div>
         </div>
