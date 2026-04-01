@@ -105,7 +105,7 @@ const Experiencia = () => {
 
           {/* Diseases and Focus */}
           <div className="card exp-small-card">
-            <h3>Principales enfermedades tratadas</h3>
+            <h3>Principales problemas tratadas</h3>
             <div className="tags-container">
               <span className="pill-tag">Ansiedad</span>
               <span className="pill-tag">Depresión</span>
