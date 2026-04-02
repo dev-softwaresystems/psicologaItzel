@@ -85,7 +85,7 @@ const PsicologaLanding: React.FC = () => {
         </div>
         <nav className="header-nav">
           <Link to="/experiencia">EXPERIENCIA</Link>
-          <a href="#">CONTACTO</a>
+          <a href="https://wa.me/527823825196">CONTACTO</a>
           <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema">
             {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
@@ -108,6 +108,9 @@ const PsicologaLanding: React.FC = () => {
                 </svg>
             </div>
             <h1>Recupera tu paz,<br/>mejora tu<br/>autoestima y vive<br/>con propósito.</h1>
+            <span style={{ marginTop: 'auto', fontSize: '13px', fontWeight: '500', opacity: 0.9, alignSelf: 'flex-start' }}>
+              Esposa de <a href="https://www.instagram.com/cx.xv.sx/" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>@Carlos Sosa</a>
+            </span>
           </div>
           
           <div className="card card-hola">
@@ -195,7 +198,7 @@ const PsicologaLanding: React.FC = () => {
           <div className="card-socials">
             <a href="https://www.instagram.com/_psireynaquintana/" target="_blank" rel="noreferrer">INSTAGRAM</a>
             <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer">WHATSAPP</a>
-            <a href="#">LINKEDIN</a>
+            <a href="https://www.facebook.com/profile.php?id=100092461209380">FACEBOOK</a>
           </div>
         </div>
       </main>

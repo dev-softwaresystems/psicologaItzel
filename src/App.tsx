@@ -18,10 +18,15 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<PsicologaLanding />} />
-        <Route path="/experiencia" element={<Experiencia />} />
-      </Routes>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Routes>
+          <Route path="/" element={<PsicologaLanding />} />
+          <Route path="/experiencia" element={<Experiencia />} />
+        </Routes>
+        <footer style={{ textAlign: 'center', padding: '10px 24px', opacity: 0.7, fontSize: '14px', fontWeight: '500', marginTop: 'auto' }}>
+          creado por <a href="https://www.instagram.com/dev.softwaresystem/" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>SoftwareSystems.dev</a>
+        </footer>
+      </div>
     </Router>
   );
 }
