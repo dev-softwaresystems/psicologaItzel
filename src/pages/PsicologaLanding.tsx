@@ -164,9 +164,9 @@ const PsicologaLanding: React.FC = () => {
                     <h4>Servicios y Precios</h4>
                 </a>
                 <div className="divider" />
-                <a href="#" className="info-item info-link">
+                <Link to="/opiniones" className="info-item info-link">
                     <h4>Opiniones</h4>
-                </a>
+                </Link>
               </div>
 
               {/* BACK */}
