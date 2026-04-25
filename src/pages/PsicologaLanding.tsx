@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './PsicologaLanding.css';
 import perfilImg from '../assets/imgs/perfil.jpeg';
-import hablemosImg from '../assets/imgs/hablemos.jpg';
+import hablemosImg from '../assets/imgs/hablemos.jpeg';
 import { ArrowUpRight, Menu, X, ArrowLeft, Moon, Sun } from 'lucide-react';
 
 const PsicologaLanding: React.FC = () => {
