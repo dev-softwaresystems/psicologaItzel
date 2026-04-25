@@ -87,7 +87,7 @@ const Opiniones = () => {
             </div>
             <nav className="mobile-menu-nav">
               <Link to="/experiencia" onClick={() => setIsMobileMenuOpen(false)}>EXPERIENCIA</Link>
-              <a href="https://wa.me/527823825196" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
+              <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
               <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema" style={{ marginTop: '24px' }}>
                 {isDarkMode ? <Sun size={32} /> : <Moon size={32} />}
               </button>
@@ -105,7 +105,7 @@ const Opiniones = () => {
         </div>
         <nav className="header-nav">
           <Link to="/experiencia">EXPERIENCIA</Link>
-          <a href="https://wa.me/527823825196">CONTACTO</a>
+          <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29">CONTACTAME</a>
           <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema">
             {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>

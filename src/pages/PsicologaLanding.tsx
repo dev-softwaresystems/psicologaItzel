@@ -38,15 +38,15 @@ const PsicologaLanding: React.FC = () => {
   };
 
   const services = [
-    { name: 'Consulta en línea'},
-    { name: 'Terapia para adultos'},
-    { name: 'Consulta de primera vez'},
-    { name: 'Manejo de duelo'},
-    { name: 'Orientación vocacional'},
-    { name: 'Evaluación psicológica'},
-    { name: 'Terapia de pareja '},
-    { name: 'Talleres y charlas'},
-    { name: 'NOM - 035'},
+    { name: 'Consulta en línea', msg: 'Quisiera agendar una Consulta en línea' },
+    { name: 'Terapia para adultos', msg: 'Quisiera agendar una cita para Terapia para adultos' },
+    { name: 'Consulta de primera vez', msg: 'Quisiera agendar una Consulta de primera vez' },
+    { name: 'Manejo de duelo', msg: 'Quisiera agendar una cita para Manejo de duelo' },
+    { name: 'Orientación vocacional', msg: 'Quisiera información sobre Orientación vocacional' },
+    { name: 'Evaluación psicológica', msg: 'Quisiera agendar una Evaluación psicológica' },
+    { name: 'Terapia de pareja ', msg: 'Quisiera agendar una cita de Terapia de pareja' },
+    { name: 'Talleres y charlas', msg: 'Quisiera información sobre Talleres y charlas'},
+    { name: 'NOM - 035', msg: 'Quisiera información sobre la NOM - 035'},
   ];
 
   return (
@@ -67,7 +67,7 @@ const PsicologaLanding: React.FC = () => {
             </div>
             <nav className="mobile-menu-nav">
               <Link to="/experiencia" onClick={() => setIsMobileMenuOpen(false)}>EXPERIENCIA</Link>
-              <a href="#" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
+              <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
               <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema" style={{ marginTop: '24px' }}>
                 {isDarkMode ? <Sun size={32} /> : <Moon size={32} />}
               </button>
@@ -85,7 +85,7 @@ const PsicologaLanding: React.FC = () => {
         </div>
         <nav className="header-nav">
           <Link to="/experiencia">EXPERIENCIA</Link>
-          <a href="https://wa.me/527823825196">CONTACTO</a>
+          <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29">CONTACTAME</a>
           <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema">
             {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
@@ -135,7 +135,7 @@ const PsicologaLanding: React.FC = () => {
             <img src={perfilImg} alt="Reyna Quintana" />
           </div>
           
-          <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer" className="card card-hablemos-action">
+          <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29" target="_blank" rel="noreferrer" className="card card-hablemos-action">
             <div className="hablemos-top">
               <span>Quisiera agendar<br/>una cita :)</span>
               <ArrowUpRight size={28} />
@@ -161,7 +161,7 @@ const PsicologaLanding: React.FC = () => {
                 </Link>
                 <div className="divider" />
                 <a href="#" className="info-item info-link" onClick={(e) => { e.preventDefault(); setShowServices(true); }}>
-                    <h4>Servicios y Precios</h4>
+                    <h4>Servicios</h4>
                 </a>
                 <div className="divider" />
                 <Link to="/opiniones" className="info-item info-link">
@@ -175,7 +175,7 @@ const PsicologaLanding: React.FC = () => {
                   <button onClick={() => setShowServices(false)} className="back-btn">
                     <ArrowLeft size={24} color="#000000" />
                   </button>
-                  <h3 className="conoceme-info-header" style={{ marginBottom: 0 }}>Servicios y precios</h3>
+                  <h3 className="conoceme-info-header" style={{ marginBottom: 0 }}>Servicios</h3>
                 </div>
                 
                 <div className="services-list">
@@ -184,7 +184,7 @@ const PsicologaLanding: React.FC = () => {
                       <div className="service-details">
                         <p className="service-title">{svc.name}</p>
                       </div>
-                      <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer" className="agendar-btn">
+                      <a href={`https://wa.me/527823825196?text=${encodeURIComponent(svc.msg)}`} target="_blank" rel="noreferrer" className="agendar-btn">
                         Agendar cita
                       </a>
                     </div>
@@ -197,7 +197,7 @@ const PsicologaLanding: React.FC = () => {
           
           <div className="card-socials">
             <a href="https://www.instagram.com/_psireynaquintana/" target="_blank" rel="noreferrer">INSTAGRAM</a>
-            <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer">WHATSAPP</a>
+            <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29" target="_blank" rel="noreferrer">WHATSAPP</a>
             <a href="https://www.facebook.com/profile.php?id=100092461209380">FACEBOOK</a>
           </div>
         </div>

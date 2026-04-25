@@ -51,7 +51,7 @@ const Experiencia = () => {
             </div>
             <nav className="mobile-menu-nav">
               <Link to="/experiencia" onClick={() => setIsMobileMenuOpen(false)}>EXPERIENCIA</Link>
-              <a href="#" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
+              <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29" onClick={() => setIsMobileMenuOpen(false)}>CONTACTAME</a>
               <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema" style={{ marginTop: '24px' }}>
                 {isDarkMode ? <Sun size={32} /> : <Moon size={32} />}
               </button>
@@ -69,7 +69,7 @@ const Experiencia = () => {
         </div>
         <nav className="header-nav">
           <Link to="/experiencia">EXPERIENCIA</Link>
-          <a href="#">CONTACTO</a>
+          <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29">CONTACTAME</a>
           <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema">
             {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
@@ -158,7 +158,7 @@ const Experiencia = () => {
               <Video size={24} />
               <div>
                 <h4>Tipos de consulta</h4>
-                <a href="https://wa.me/527823825196" target="_blank" rel="noreferrer" className="exp-link">
+                <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29" target="_blank" rel="noreferrer" className="exp-link">
                   Videoconsulta <span className="underline">Crea tu cita</span> <ArrowUpRight size={16} />
                 </a>
               </div>
