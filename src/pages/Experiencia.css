@@ -171,3 +171,7 @@
   width: 100%;
   margin: 28px 0;
 }
+
+body.dark .divider-subtle {
+  background-color: var(--color-primary);
+} 

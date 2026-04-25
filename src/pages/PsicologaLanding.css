@@ -132,7 +132,7 @@
 }
 
 @media (min-width: 1024px) {
-  .card:hover {
+  .card:not(.card-front):not(.card-back):hover {
     transform: translateY(-6px);
     box-shadow: 0 16px 32px -16px rgba(0,0,0,0.15);
   }
@@ -278,9 +278,14 @@
 
 .divider {
   height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #00355D; /*Color anterior rgba(0, 0, 0, 0.1)*/
   width: 100%;
 }
+
+body.dark .divider {
+  background-color: #C0CFDB;
+} 
+
 .info-item {
   padding: 18px 0;
   flex: 1; 
@@ -387,32 +392,11 @@
   border-bottom: none;
 }
 
-.service-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
 .service-title {
   font-size: 16px;
   font-weight: 600;
   margin: 0;
 }
-.service-price {
-  font-size: 14px;
-  margin: 0;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.service-sublink {
-  text-decoration: underline;
-  cursor: pointer;
-  opacity: 0.7;
-}
-.service-sublink:hover {
-  opacity: 1;
-}
-
 .agendar-btn {
   background-color: var(--color-secondary);
   color: var(--color-text);

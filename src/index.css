@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
-  --color-bg: #F9F1F0;
-  --color-primary: #FADCD9;
-  --color-secondary: #F8AFA6;
+  --color-bg: #F6F4F0; /*Naranja Claro*/
+  --color-primary: #C0CFD8; /*Color Anterior #FADCD9*/
+  --color-secondary: #336999; /*Color Anterior #F8AFA6*/
   --color-text: #000000;
-  --border-radius: 24px;
-  --gap: 24px;
+  --border-radius: 24px; 
+  --gap: 24px; 
 }
 
 body.dark {
-  --color-bg: #141212;
-  --color-primary: #211D1D;
-  --color-secondary: #D69890;
+  --color-bg: #0B1220; /*Color Anterior #141212, #020A16*/
+  --color-primary: #151E27; /*Color Anterior #211D1D, #192229*/
+  --color-secondary: #7EACC7; /*Color Anterior #D69890, #6994AD*/
   --color-text: #FFFFFF;
 }
 
 body.dark .card-hablemos-action,
 body.dark .agendar-btn,
-body.dark .pill-tag {
-  color: #141212 !important;
+body.dark .pill-tag,
+body.dark .highlight-card {
+  color: #0C1620 !important; /*Color Anterior #141212*/ 
 }
 
 * {

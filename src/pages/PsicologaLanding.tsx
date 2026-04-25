@@ -39,7 +39,8 @@ const PsicologaLanding: React.FC = () => {
 
   const services = [
     { name: 'Consulta en línea', msg: 'Quisiera agendar una Consulta en línea' },
-    { name: 'Terapia para adultos', msg: 'Quisiera agendar una cita para Terapia para adultos' },
+    { name: 'Terapia para mujeres', msg: 'Quisiera agendar una cita para Terapia para mujeres' },
+    { name: 'Terapia para adolescentes/niños', msg: 'Quisiera agendar una cita para Terapia para adolescentes o niños' },
     { name: 'Consulta de primera vez', msg: 'Quisiera agendar una Consulta de primera vez' },
     { name: 'Manejo de duelo', msg: 'Quisiera agendar una cita para Manejo de duelo' },
     { name: 'Orientación vocacional', msg: 'Quisiera información sobre Orientación vocacional' },
@@ -62,7 +63,7 @@ const PsicologaLanding: React.FC = () => {
                 </Link>
               </div>
               <button className="close-menu-btn" onClick={() => setIsMobileMenuOpen(false)}>
-                <X size={32} strokeWidth={3} color="#000000" />
+                {isDarkMode ? <X size={32} strokeWidth={3} color="#FFFFFF" /> : <X size={32} strokeWidth={3} color="#000000" />}
               </button>
             </div>
             <nav className="mobile-menu-nav">
@@ -91,7 +92,7 @@ const PsicologaLanding: React.FC = () => {
           </button>
         </nav>
         <button className="hamburger-btn" onClick={() => setIsMobileMenuOpen(true)}>
-          <Menu size={28} color="#000000" />
+          {isDarkMode ? <Menu size={28} color="#FFFFFF" /> : <Menu size={28} color="#000000" />}
         </button>
       </header>
 
@@ -101,7 +102,7 @@ const PsicologaLanding: React.FC = () => {
         <div className="bento-col col-1">
           <div className="card card-recupera">
             <div className="flower-icon">
-                <svg viewBox="0 0 100 100" fill="none" stroke="#F8AFA6" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 100 100" fill="none" stroke="#00355D" strokeWidth="1" xmlns="http://www.w3.org/2000/svg">
                     {[0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165].map((angle, i) => (
                         <ellipse key={i} cx="50" cy="50" rx="40" ry="12" transform={`rotate(${angle} 50 50)`} />
                     ))}
@@ -115,11 +116,10 @@ const PsicologaLanding: React.FC = () => {
           
           <div className="card card-hola">
             <div className="dot-icon">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="#F8AFA6" xmlns="http://www.w3.org/2000/svg">
+                <svg width="40" height="40" viewBox="0 0 32 32" fill="#00355D" xmlns="http://www.w3.org/2000/svg">
                     {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-                        <rect key={i} x="14" y="4" width="4" height="4" transform={`rotate(${angle} 16 16)`} />
+                        <path key={i} d="M 16 0 Q 16 4 20 4 Q 16 4 16 8 Q 16 4 12 4 Q 16 4 16 0 Z" transform={`rotate(${angle} 16 16)`} />
                     ))}
-                    <rect x="14" y="14" width="4" height="4" />
                 </svg>
             </div>
             <p className="intro-text">
@@ -167,13 +167,14 @@ const PsicologaLanding: React.FC = () => {
                 <Link to="/opiniones" className="info-item info-link">
                     <h4>Opiniones</h4>
                 </Link>
+                <div className="divider" />
               </div>
 
               {/* BACK */}
               <div className="card card-info card-back" style={{ overflowY: 'auto' }}>
                 <div className="back-header">
                   <button onClick={() => setShowServices(false)} className="back-btn">
-                    <ArrowLeft size={24} color="#000000" />
+                    {isDarkMode ? <ArrowLeft size={24} color="#FFFFFF" /> : <ArrowLeft size={24} color="#000000" />}
                   </button>
                   <h3 className="conoceme-info-header" style={{ marginBottom: 0 }}>Servicios</h3>
                 </div>

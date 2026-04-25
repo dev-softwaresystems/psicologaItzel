@@ -1,9 +1,19 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import PsicologaLanding from './pages/PsicologaLanding';
 import Experiencia from './pages/Experiencia';
 import Opiniones from './pages/Opiniones';
 import './index.css';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   useEffect(() => {
@@ -19,6 +29,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Routes>
           <Route path="/" element={<PsicologaLanding />} />
