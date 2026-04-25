@@ -46,7 +46,7 @@ const Experiencia = () => {
                 </Link>
               </div>
               <button className="close-menu-btn" onClick={() => setIsMobileMenuOpen(false)}>
-                <X size={32} strokeWidth={3} color="#000000" />
+                <X size={32} strokeWidth={3} color="var(--color-text)" />
               </button>
             </div>
             <nav className="mobile-menu-nav">
@@ -75,7 +75,7 @@ const Experiencia = () => {
           </button>
         </nav>
         <button className="hamburger-btn" onClick={() => setIsMobileMenuOpen(true)}>
-          <Menu size={28} color="#000000" />
+          <Menu size={28} color="var(--color-text)" />
         </button>
       </header>
 

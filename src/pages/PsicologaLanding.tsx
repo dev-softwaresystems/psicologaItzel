@@ -63,7 +63,7 @@ const PsicologaLanding: React.FC = () => {
                 </Link>
               </div>
               <button className="close-menu-btn" onClick={() => setIsMobileMenuOpen(false)}>
-                {isDarkMode ? <X size={32} strokeWidth={3} color="#FFFFFF" /> : <X size={32} strokeWidth={3} color="#000000" />}
+                <X size={32} strokeWidth={3} color="var(--color-text)" />
               </button>
             </div>
             <nav className="mobile-menu-nav">
@@ -88,11 +88,11 @@ const PsicologaLanding: React.FC = () => {
           <Link to="/experiencia">EXPERIENCIA</Link>
           <a href="https://wa.me/527823825196?text=Quisiera%20agendar%20una%20cita%20%3A%29">CONTACTAME</a>
           <button onClick={toggleTheme} className="theme-toggle" aria-label="Cambiar Tema">
-            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />} 
           </button>
         </nav>
         <button className="hamburger-btn" onClick={() => setIsMobileMenuOpen(true)}>
-          {isDarkMode ? <Menu size={28} color="#FFFFFF" /> : <Menu size={28} color="#000000" />}
+          <Menu size={28} color="var(--color-text)" />
         </button>
       </header>
 
@@ -174,7 +174,7 @@ const PsicologaLanding: React.FC = () => {
               <div className="card card-info card-back" style={{ overflowY: 'auto' }}>
                 <div className="back-header">
                   <button onClick={() => setShowServices(false)} className="back-btn">
-                    {isDarkMode ? <ArrowLeft size={24} color="#FFFFFF" /> : <ArrowLeft size={24} color="#000000" />}
+                    <ArrowLeft size={24} color="var(--color-text)" />
                   </button>
                   <h3 className="conoceme-info-header" style={{ marginBottom: 0 }}>Servicios</h3>
                 </div>
